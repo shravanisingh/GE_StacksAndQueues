@@ -6,5 +6,8 @@ public class Main {
         queue.enqueue(70);
         System.out.println("Queue sequence after enqueue operations:");
         queue.printQueue();
+        queue.dequeue();
+        System.out.println("Queue after dequeue operation:");
+        queue.printQueue();
     }
 }

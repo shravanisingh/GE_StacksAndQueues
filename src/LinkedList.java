@@ -5,14 +5,22 @@ class LinkedList {
     public void enqueue(int data) {
         Node newNode = new Node(data);
         if (tail == null) {
-            head = tail = newNode;  // If the queue is empty, both head and tail point to the new node
+            head = tail = newNode;
             return;
         }
-        tail.next = newNode;  // Link the new node after the current tail
-        tail = newNode;  // Update the tail to the new node
+        tail.next = newNode;
+        tail = newNode;
     }
-
-
+    public void dequeue() {
+        if (head == null) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+    }
     public void printQueue() {
         Node current = head;
         while (current != null) {
