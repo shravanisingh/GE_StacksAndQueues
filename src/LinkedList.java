@@ -1,26 +1,19 @@
 class LinkedList {
-    Node head;
-    public void add(int data) {
+    Node head;  // Front of the queue
+    Node tail;  // End of the queue
+
+    public void enqueue(int data) {
         Node newNode = new Node(data);
-        newNode.next = head;
-        head = newNode;
-    }
-    public void pop() {
-        if (head == null) {
-            System.out.println("Stack is empty");
+        if (tail == null) {
+            head = tail = newNode;  // If the queue is empty, both head and tail point to the new node
             return;
         }
-        head = head.next;
+        tail.next = newNode;  // Link the new node after the current tail
+        tail = newNode;  // Update the tail to the new node
     }
 
-    public int peek() {
-        if (head == null) {
-            System.out.println("Stack is empty");
-            return -1;
-        }
-        return head.data;
-    }
-    public void printStack() {
+
+    public void printQueue() {
         Node current = head;
         while (current != null) {
             System.out.print(current.data + " ");
