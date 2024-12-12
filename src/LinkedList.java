@@ -5,6 +5,21 @@ class LinkedList {
         newNode.next = head;
         head = newNode;
     }
+    public void pop() {
+        if (head == null) {
+            System.out.println("Stack is empty");
+            return;
+        }
+        head = head.next;
+    }
+
+    public int peek() {
+        if (head == null) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        return head.data;
+    }
     public void printStack() {
         Node current = head;
         while (current != null) {
